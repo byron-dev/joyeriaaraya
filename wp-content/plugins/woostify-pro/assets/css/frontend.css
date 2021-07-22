@@ -1,0 +1,156 @@
+/* Header Template Builder */
+.woostify-header-template-builder.has-sticky {
+  position: relative;
+  z-index: 40;
+}
+
+.woostify-header-template-builder.has-sticky.sticky-on-all-device .woostify-header-template-builder-inner.active {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.logged-in.admin-bar .woostify-header-template-builder.has-sticky.sticky-on-all-device .woostify-header-template-builder-inner.active {
+  top: 46px;
+}
+
+@media (min-width: 601px) {
+  .logged-in.admin-bar .woostify-header-template-builder.has-sticky.sticky-on-all-device .woostify-header-template-builder-inner.active {
+    top: 46px;
+  }
+}
+
+@media (min-width: 783px) {
+  .logged-in.admin-bar .woostify-header-template-builder.has-sticky.sticky-on-all-device .woostify-header-template-builder-inner.active {
+    top: 32px;
+  }
+}
+
+@media (min-width: 992px) {
+  .woostify-header-template-builder.has-sticky.sticky-on-desktop .woostify-header-template-builder-inner.active {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  .logged-in.admin-bar .woostify-header-template-builder.has-sticky.sticky-on-desktop .woostify-header-template-builder-inner.active {
+    top: 32px;
+  }
+}
+
+@media (max-width: 991px) {
+  .woostify-header-template-builder.has-sticky.sticky-on-mobile .woostify-header-template-builder-inner.active {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  .logged-in.admin-bar .woostify-header-template-builder.has-sticky.sticky-on-mobile .woostify-header-template-builder-inner.active {
+    top: 46px;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 601px) {
+  .logged-in.admin-bar .woostify-header-template-builder.has-sticky.sticky-on-mobile .woostify-header-template-builder-inner.active {
+    top: 46px;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 783px) {
+  .logged-in.admin-bar .woostify-header-template-builder.has-sticky.sticky-on-mobile .woostify-header-template-builder-inner.active {
+    top: 32px;
+  }
+}
+
+.woostify-header-template-builder.has-shrink .woostify-header-template-builder-inner.active .elementor-section-wrap img {
+  max-height: 40px;
+  width: auto;
+}
+
+.woostify-header-template-builder.has-shrink .woostify-header-template-builder-inner.active .elementor-element-populated {
+  max-height: 60px;
+}
+
+@media (min-width: 992px) {
+  .woostify-header-template-builder.has-shrink .woostify-header-template-builder-inner.active .main-navigation .primary-navigation > .menu-item > a {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+}
+
+.woostify-header-template-builder.has-shrink .woostify-header-template-builder-inner.active .mega-menu-wrapper .elementor-element-populated {
+  max-height: none;
+}
+
+.woostify-header-template-builder .woostify-header-template-builder-inner {
+  background-color: #fff;
+}
+
+/* Cart icon */
+.woostify-d-flex {
+  display: flex;
+}
+
+.woostify-align-center {
+  align-items: center;
+}
+
+.woostify-cart-icon-widget .shop-cart-count.hide-zero-val.hide {
+  display: none;
+}
+
+/* Ajax Product Search */
+.site-search {
+  position: relative;
+}
+
+.site-search .ajax-search-results {
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background-color: #fff;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0px 4px 10px -5px rgba(0, 0, 0, 0.168627);
+}
+
+/* Sticky */
+.woostify-sticky-yes.elementor-section {
+  z-index: 99;
+}
+
+.elementor-edit-mode .woostify-sticky-yes.elementor-section {
+  z-index: 1;
+}
+
+#elementor-preview-iframe .woostify-sticky-yes.elementor-section {
+  top: 0 !important;
+}
+
+.woostify-site-logo-header .custom-logo {
+  transition: 0.3s all;
+}
+
+.woostify-sticky--active {
+  box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.12);
+  background-color: #fff;
+  transition: top 0.1s linear;
+}
+
+.woostify-header-transparent-yes {
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+#elementor-preview #view .woostify-header-tranparent-yes {
+  position: relative;
+}
+
+.single-hf_builder .entry-title, .single-hf_builder .entry-meta {
+  display: none;
+}
