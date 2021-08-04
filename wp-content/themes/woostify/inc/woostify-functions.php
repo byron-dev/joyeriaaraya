@@ -339,66 +339,18 @@ if ( ! function_exists( 'woostify_sanitize_raw_html' ) ) {
 	 * @param string $value The raw html value.
 	 */
 	function woostify_sanitize_raw_html( $value ) {
-		$content = wp_kses(
-			$value,
-			array(
-				'a'      => array(
-					'class'  => array(),
-					'href'   => array(),
-					'rel'    => array(),
-					'title'  => array(),
-					'target' => array(),
-					'style'  => array(),
-				),
-				'code'   => array(),
-				'div'    => array(
-					'class' => array(),
-					'style' => array(),
-				),
-				'em'     => array(),
-				'h1'     => array(),
-				'h2'     => array(),
-				'h3'     => array(),
-				'h4'     => array(),
-				'h5'     => array(),
-				'h6'     => array(),
-				'i'      => array(),
-				'li'     => array(
-					'class' => array(),
-				),
-				'ul'     => array(
-					'class' => array(),
-				),
-				'ol'     => array(
-					'class' => array(),
-				),
-				'p'      => array(
-					'class' => array(),
-					'style' => array(),
-				),
-				'span'   => array(
-					'class' => array(),
-					'style' => array(),
-				),
-				'strong' => array(
-					'class' => array(),
-					'style' => array(),
-				),
-				'b'      => array(
-					'class' => array(),
-					'style' => array(),
-				),
-				'img'    => array(
-					'class'  => array(),
-					'alt'    => array(),
-					'width'  => array(),
-					'height' => array(),
-					'src'    => array(),
-				),
-			)
+		$kses_defaults = wp_kses_allowed_html( 'post' );
+		$image         = array(
+			'img'    => array(
+				'class'  => array(),
+				'alt'    => array(),
+				'width'  => array(),
+				'height' => array(),
+				'src'    => array(),
+			),
 		);
 
-		return $content;
+		return wp_kses( $value, array_merge( $kses_defaults, $image ) );
 	}
 }
 
@@ -791,72 +743,6 @@ if ( ! function_exists( 'woostify_wishlist_page_url' ) ) {
 		}
 
 		return '#';
-	}
-}
-
-if ( ! function_exists( 'woostify_fetch_svg_icon' ) ) {
-	/**
-	 * Get an SVG Icon
-	 *
-	 * @param string $icon icon.
-	 *
-	 * @return string
-	 */
-	function woostify_fetch_svg_icon( $icon = '' ) {
-		$file_content  = wp_remote_get( WOOSTIFY_THEME_URI . 'assets/svg/svgs.json' );
-		$woostify_svgs = json_decode( $file_content['body'], true );
-		$woostify_svgs = apply_filters( 'woostify_svg_icons', $woostify_svgs );
-
-		$output = isset( $woostify_svgs[ $icon ] ) ? $woostify_svgs[ $icon ] : '';
-
-		return $output;
-	}
-}
-
-if ( ! function_exists( 'woostify_fetch_all_svg_icon' ) ) {
-	/**
-	 * Get all SVG icon
-	 *
-	 * @return mixed|void
-	 */
-	function woostify_fetch_all_svg_icon() {
-		$file_content  = wp_remote_get( WOOSTIFY_THEME_URI . 'assets/svg/svgs.json' );
-		$woostify_svgs = json_decode( $file_content['body'], true );
-		$woostify_svgs = apply_filters( 'woostify_svg_icons', $woostify_svgs );
-
-		return $woostify_svgs;
-	}
-}
-
-if ( ! function_exists( 'woostify_allow_tags_svg' ) ) {
-	/**
-	 * Allow svg tags
-	 *
-	 * @return mixed|void
-	 */
-	function woostify_allow_tags_svg() {
-		$kses_defaults = wp_kses_allowed_html( 'post' );
-
-		$svg_args = array(
-			'svg'   => array(
-				'class'           => true,
-				'aria-hidden'     => true,
-				'aria-labelledby' => true,
-				'role'            => true,
-				'xmlns'           => true,
-				'width'           => true,
-				'height'          => true,
-				'viewbox'         => true, // <= Must be lower case!
-			),
-			'g'     => array( 'fill' => true ),
-			'title' => array( 'title' => true ),
-			'path'  => array(
-				'd'    => true,
-				'fill' => true,
-			),
-		);
-
-		return array_merge( $kses_defaults, $svg_args );
 	}
 }
 

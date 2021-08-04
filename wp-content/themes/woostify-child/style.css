@@ -7,3 +7,27 @@
  Template: woostify
  Version: 1.0.0
 */
+
+/*
+ * Remove the default margin bottom 
+ * that Elementor adds to the paragraphs
+ */
+p {
+    margin-bottom: 0;
+}
+
+/*
+ * Hide default site header so
+ * we can create a custom one with the
+ * Elementor theme builder
+ */
+header#masthead {
+    display: none;
+}
+
+/*
+ * Cart icon on the menu
+ */
+#elementor-menu-cart__toggle_button .elementor-button-icon::before {
+    font-weight: bold;
+}

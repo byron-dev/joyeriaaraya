@@ -1,4 +1,4 @@
-/*! elementor-pro - v3.3.4 - 21-07-2021 */
+/*! elementor-pro - v3.3.5 - 02-08-2021 */
 (self["webpackChunkelementor_pro"] = self["webpackChunkelementor_pro"] || []).push([["preloaded-elements-handlers"],{
 
 /***/ "../node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js":
@@ -2967,9 +2967,14 @@ var Recaptcha = /*#__PURE__*/function (_elementorModules$fro) {
               name: 'g-recaptcha-response'
             });
             $form.append(_this2.elements.$recaptchaResponse);
-          }
+          } // Support old browsers.
 
-          $form.trigger('submit');
+
+          var bcSupport = !$form[0].reportValidity || 'function' !== typeof $form[0].reportValidity;
+
+          if (bcSupport || $form[0].reportValidity()) {
+            $form.trigger('submit');
+          }
         });
       });
     }

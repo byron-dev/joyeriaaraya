@@ -1,4 +1,4 @@
-/*! elementor-pro - v3.3.4 - 21-07-2021 */
+/*! elementor-pro - v3.3.5 - 02-08-2021 */
 (self["webpackChunkelementor_pro"] = self["webpackChunkelementor_pro"] || []).push([["woocommerce-menu-cart"],{
 
 /***/ "../modules/woocommerce/assets/js/frontend/handlers/menu-cart.js":

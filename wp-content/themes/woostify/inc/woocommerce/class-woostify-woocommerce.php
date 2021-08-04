@@ -58,6 +58,7 @@ if ( ! class_exists( 'Woostify_WooCommerce' ) ) {
 			add_filter( 'woocommerce_output_related_products_args', 'woostify_related_products_args' );
 			add_filter( 'woocommerce_pagination_args', 'woostify_change_woocommerce_arrow_pagination' );
 			add_filter( 'woocommerce_add_to_cart_fragments', 'woostify_content_fragments' );
+			add_filter( 'woocommerce_update_order_review_fragments', 'woostify_update_order_review_fragments' );
 			add_filter( 'woocommerce_product_loop_start', 'woostify_woocommerce_loop_start' );
 			add_action( 'woostify_product_loop_item_action_item', 'woostify_product_loop_item_add_to_cart_icon', 10 );
 			add_action( 'woostify_product_loop_item_action_item', 'woostify_product_loop_item_wishlist_icon', 30 );
@@ -345,6 +346,34 @@ if ( ! class_exists( 'Woostify_WooCommerce' ) ) {
 
 			// Tiny slider: product images.
 			wp_enqueue_script( 'woostify-product-images' );
+			wp_localize_script(
+				'woostify-product-images',
+				'woostify_product_images_slider_options',
+				apply_filters(
+					'woostify_product_images_slider_options',
+					array(
+						'main' => array(
+							'container'            => '#product-images',
+							'navContainer'         => '#product-thumbnail-images',
+							'loop'                 => false,
+							'rewind'               => true,
+							'items'                => 1,
+							'navAsThumbnails'      => true,
+							'autoHeight'           => true,
+							'preventScrollOnTouch' => true,
+						),
+						'thumb' => array(
+							'loop'      => false,
+							'rewind'    => true,
+							'container' => '#product-thumbnail-images',
+							'gutter'    => 10,
+							'nav'       => false,
+							'controls'  => true,
+							'items'     => 4,
+						),
+					)
+				)
+			);
 
 			// Easyzoom.
 			wp_enqueue_script( 'easyzoom-handle' );
