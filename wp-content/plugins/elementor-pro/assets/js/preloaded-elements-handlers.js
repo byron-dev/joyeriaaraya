@@ -1,4 +1,4 @@
-/*! elementor-pro - v3.3.5 - 02-08-2021 */
+/*! elementor-pro - v3.3.6 - 10-08-2021 */
 (self["webpackChunkelementor_pro"] = self["webpackChunkelementor_pro"] || []).push([["preloaded-elements-handlers"],{
 
 /***/ "../node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js":
@@ -4732,7 +4732,9 @@ var _default = elementorModules.frontend.handlers.Base.extend({
     }
 
     var elementSettings = this.getElementSettings(),
-        subIndicatorsContent = "<i class=\"".concat(elementSettings.submenu_icon.value, "\"></i>"); // subIndicators param - Added for backwards compatibility:
+        iconValue = elementSettings.submenu_icon.value,
+        // The value of iconValue can be either className inside the editor or a markup in the frontend.
+    subIndicatorsContent = iconValue.indexOf('<') > -1 ? iconValue : "<i class=\"".concat(iconValue, "\"></i>"); // subIndicators param - Added for backwards compatibility:
     // If the old 'indicator' control value = 'none', the <span class="sub-arrow"> wrapper element is removed
 
     this.elements.$menu.smartmenus({

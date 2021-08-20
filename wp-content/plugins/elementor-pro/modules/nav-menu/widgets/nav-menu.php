@@ -451,7 +451,7 @@ class Nav_Menu extends Base_Widget {
 				],
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-nav-menu--main .elementor-item' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .elementor-nav-menu--main .elementor-item' => 'color: {{VALUE}}; fill: {{VALUE}};',
 				],
 			]
 		);
@@ -477,7 +477,7 @@ class Nav_Menu extends Base_Widget {
 					'{{WRAPPER}} .elementor-nav-menu--main .elementor-item:hover,
 					{{WRAPPER}} .elementor-nav-menu--main .elementor-item.elementor-item-active,
 					{{WRAPPER}} .elementor-nav-menu--main .elementor-item.highlighted,
-					{{WRAPPER}} .elementor-nav-menu--main .elementor-item:focus' => 'color: {{VALUE}}',
+					{{WRAPPER}} .elementor-nav-menu--main .elementor-item:focus' => 'color: {{VALUE}}; fill: {{VALUE}};',
 				],
 				'condition' => [
 					'pointer!' => 'background',
@@ -1066,6 +1066,16 @@ class Nav_Menu extends Base_Widget {
 		if ( 'fa ' === substr( $frontend_settings['submenu_icon']['value'], 0, 3 ) && Icons_Manager::is_migration_allowed() ) {
 			$frontend_settings['submenu_icon']['value'] = str_replace( 'fa ', 'fas ', $frontend_settings['submenu_icon']['value'] );
 		}
+
+		// Determine the submenu icon markup.
+		if ( Plugin::elementor()->experiments->is_feature_active( 'e_font_icon_svg' ) ) {
+			$icon_content = Icons_Manager::render_font_icon( $frontend_settings['submenu_icon'] );
+		} else {
+			$icon_content = sprintf( '<i class="%s"></i>', $frontend_settings['submenu_icon']['value'] );
+		}
+
+		// Passing the entire icon markup to the frontend settings because it can be either <i> or <svg> tag.
+		$frontend_settings['submenu_icon']['value'] = $icon_content;
 
 		return $frontend_settings;
 	}

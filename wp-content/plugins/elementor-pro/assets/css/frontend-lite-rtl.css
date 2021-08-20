@@ -1,4 +1,4 @@
-/*! elementor-pro - v3.3.5 - 02-08-2021 */
+/*! elementor-pro - v3.3.6 - 10-08-2021 */
 .elementor-bg-transform .elementor-bg {
   will-change: transform; }
 
@@ -503,23 +503,23 @@ body.rtl.woocommerce-page div.product .elementor-widget-woocommerce-product-imag
 .elementor-product-rating--align-justify .woocommerce-product-rating .woocommerce-review-link {
   margin-right: auto; }
 
-.elementor-element.elementor-products-grid ul.products {
+.elementor-products-grid ul.products {
   display: grid;
   margin: 0;
   grid-column-gap: 20px;
   grid-row-gap: 40px; }
-  .elementor-element.elementor-products-grid ul.products:before, .elementor-element.elementor-products-grid ul.products:after {
+  .elementor-products-grid ul.products:before, .elementor-products-grid ul.products:after {
     content: none;
     display: none; }
-  .elementor-element.elementor-products-grid ul.products li.product {
+  .elementor-products-grid ul.products li.product {
     width: auto;
     padding: 0;
     margin: 0;
     float: none; }
-    .elementor-element.elementor-products-grid ul.products li.product .onsale {
+    .elementor-products-grid ul.products li.product .onsale {
       padding: 0;
       display: none; }
-    .elementor-element.elementor-products-grid ul.products li.product a.woocommerce-loop-product__link {
+    .elementor-products-grid ul.products li.product a.woocommerce-loop-product__link {
       display: block;
       position: relative; }
 

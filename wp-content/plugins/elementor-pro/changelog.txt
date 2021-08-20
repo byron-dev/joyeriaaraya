@@ -1,5 +1,11 @@
 # Elementor Pro - by Elementor.com
 
+#### 3.3.6 - 2021-08-10
+* Tweak: Added support for future feature in Nav Menu widget
+* Fix: WooCommerce responsive grid styles are not being reflected in Product Related widget ([#15857](https://github.com/elementor/elementor/issues/15857))
+* Fix: WooCommerce responsive grid styles are not being reflected in Upsells widget ([#15857](https://github.com/elementor/elementor/issues/15857))
+* Fix: WooCommerce responsive grid styles are not being reflected in Product Categories widget ([#15857](https://github.com/elementor/elementor/issues/15857))
+
 #### 3.3.5 - 2021-08-01
 * Fix: Responsive layout glitches in Products and Products Archive widgets ([#15773](https://github.com/elementor/elementor/issues/15773))
 * Fix: reCAPTCHA V3 integration conflict with required fields validation in Forms widget

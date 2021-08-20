@@ -144,6 +144,9 @@ wp-config.php
 # htaccess
 /.htaccess
 
+# Backup files created by All in One WP Migration
+/wp-content/ai1wm-backups/
+
 # All plugins
 # Note: If you wish to whitelist plugins,
 # uncomment the next line

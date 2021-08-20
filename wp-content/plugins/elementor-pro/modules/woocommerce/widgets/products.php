@@ -112,34 +112,7 @@ class Products extends Products_Base {
 			]
 		);
 
-		$devices_required = [];
-
-		// Make sure device settings can inherit from larger screen sizes' breakpoint settings.
-		foreach ( Breakpoints_Manager::get_default_config() as $breakpoint_name => $breakpoint_config ) {
-			$devices_required[ $breakpoint_name ] = [
-				'required' => false,
-			];
-		}
-
-		$this->add_responsive_control(
-			'columns',
-			[
-				'label' => __( 'Columns', 'elementor-pro' ),
-				'type' => Controls_Manager::NUMBER,
-				'prefix_class' => 'elementor-grid%s-',
-				'min' => 1,
-				'max' => 12,
-				'default' => Products_Renderer::DEFAULT_COLUMNS_AND_ROWS,
-				'tablet_default' => '3',
-				'mobile_default' => '2',
-				'required' => true,
-				'device_args' => $devices_required,
-				'min_affected_device' => [
-					Controls_Stack::RESPONSIVE_DESKTOP => Controls_Stack::RESPONSIVE_TABLET,
-					Controls_Stack::RESPONSIVE_TABLET => Controls_Stack::RESPONSIVE_TABLET,
-				],
-			]
-		);
+		$this->add_columns_responsive_control();
 
 		$this->add_control(
 			'rows',

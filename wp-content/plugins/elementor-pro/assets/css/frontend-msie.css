@@ -1,4 +1,4 @@
-/*! elementor-pro - v3.3.5 - 02-08-2021 */
+/*! elementor-pro - v3.3.6 - 10-08-2021 */
 @charset "UTF-8";
 .elementor-bg-transform .elementor-bg {
   will-change: transform; }
@@ -504,23 +504,23 @@ body.rtl.woocommerce-page div.product .elementor-widget-woocommerce-product-imag
 .elementor-product-rating--align-justify .woocommerce-product-rating .woocommerce-review-link {
   margin-left: auto; }
 
-.elementor-element.elementor-products-grid ul.products {
+.elementor-products-grid ul.products {
   display: grid;
   margin: 0;
   grid-column-gap: 20px;
   grid-row-gap: 40px; }
-  .elementor-element.elementor-products-grid ul.products:before, .elementor-element.elementor-products-grid ul.products:after {
+  .elementor-products-grid ul.products:before, .elementor-products-grid ul.products:after {
     content: none;
     display: none; }
-  .elementor-element.elementor-products-grid ul.products li.product {
+  .elementor-products-grid ul.products li.product {
     width: auto;
     padding: 0;
     margin: 0;
     float: none; }
-    .elementor-element.elementor-products-grid ul.products li.product .onsale {
+    .elementor-products-grid ul.products li.product .onsale {
       padding: 0;
       display: none; }
-    .elementor-element.elementor-products-grid ul.products li.product a.woocommerce-loop-product__link {
+    .elementor-products-grid ul.products li.product a.woocommerce-loop-product__link {
       display: block;
       position: relative; }
 
@@ -5420,6 +5420,10 @@ body.rtl .elementor-widget-slides .elementor-swiper-button-prev {
       -ms-transform: rotate(-90deg);
           transform: rotate(-90deg); }
 
+.elementor-nav-menu--main .elementor-nav-menu--dropdown .sub-arrow .e-font-icon-svg {
+  height: 1em;
+  width: 1em; }
+
 .elementor-nav-menu--layout-horizontal {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5564,6 +5568,9 @@ body.rtl .elementor-widget-slides .elementor-swiper-button-prev {
       pointer-events: none; }
     .elementor-nav-menu .sub-arrow .fa.fa-chevron-down, .elementor-nav-menu .sub-arrow .fas.fa-chevron-down {
       font-size: 0.7em; }
+    .elementor-nav-menu .sub-arrow .e-font-icon-svg {
+      height: 1em;
+      width: 1em; }
 
 .elementor-nav-menu--dropdown .elementor-item:hover, .elementor-nav-menu--dropdown .elementor-item:focus, .elementor-nav-menu--dropdown .elementor-item.highlighted, .elementor-nav-menu--dropdown .elementor-item.elementor-item-active,
 .elementor-sub-item:hover,

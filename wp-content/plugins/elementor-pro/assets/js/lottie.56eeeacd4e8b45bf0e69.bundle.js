@@ -1,4 +1,4 @@
-/*! elementor-pro - v3.3.5 - 02-08-2021 */
+/*! elementor-pro - v3.3.6 - 10-08-2021 */
 (self["webpackChunkelementor_pro"] = self["webpackChunkelementor_pro"] || []).push([["lottie"],{
 
 /***/ "../modules/lottie/assets/js/frontend/handler.js":
